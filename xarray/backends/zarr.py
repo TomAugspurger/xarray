@@ -1628,6 +1628,7 @@ class ZarrBackendEntrypoint(BackendEntrypoint):
                 use_zarr_fill_value_as_mask=None,
                 zarr_format=zarr_format,
                 cache_members=cache_members,
+                coords_buffer_prototype=coords_buffer_prototype,
             )
 
         store_entrypoint = StoreBackendEntrypoint()
