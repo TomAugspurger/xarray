@@ -661,7 +661,7 @@ class ZarrStore(AbstractWritableDataStore):
         use_zarr_fill_value_as_mask=None,
         write_empty: bool | None = None,
         cache_members: bool = True,
-        coords_buffer_prototype: Any | None = True,
+        coords_buffer_prototype: Any | None = None,
     ):
         (
             zarr_group,
@@ -718,7 +718,7 @@ class ZarrStore(AbstractWritableDataStore):
         use_zarr_fill_value_as_mask=None,
         write_empty: bool | None = None,
         cache_members: bool = True,
-        coords_buffer_prototype: Any | None = True,
+        coords_buffer_prototype: Any | None = None,
     ):
         (
             zarr_group,
@@ -1609,7 +1609,7 @@ class ZarrBackendEntrypoint(BackendEntrypoint):
         engine=None,
         use_zarr_fill_value_as_mask=None,
         cache_members: bool = True,
-        coords_buffer_prototype: Any | None = True,
+        coords_buffer_prototype: Any | None = None,
     ) -> Dataset:
         filename_or_obj = _normalize_path(filename_or_obj)
         if not store:
@@ -1661,7 +1661,7 @@ class ZarrBackendEntrypoint(BackendEntrypoint):
         storage_options=None,
         zarr_version=None,
         zarr_format=None,
-        coords_buffer_prototype: Any | None = True,
+        coords_buffer_prototype: Any | None = None,
     ) -> DataTree:
         filename_or_obj = _normalize_path(filename_or_obj)
         groups_dict = self.open_groups_as_dict(
@@ -1705,7 +1705,7 @@ class ZarrBackendEntrypoint(BackendEntrypoint):
         storage_options=None,
         zarr_version=None,
         zarr_format=None,
-        coords_buffer_prototype: Any | None = True,
+        coords_buffer_prototype: Any | None = None,
     ) -> dict[str, Dataset]:
         from xarray.core.treenode import NodePath
 
