@@ -783,6 +783,8 @@ class ZarrStore(AbstractWritableDataStore):
         self._members: dict[str, ZarrArray | ZarrGroup] = {}
         if _zarr_v3() and coords_buffer_prototype is None:
             # Once zarr-v3 is required we can just have this as the default
+            # https://github.com/zarr-developers/zarr-python/issues/2871
+            # Use the public API once available
             from zarr.core.buffer.cpu import buffer_prototype
 
             coords_buffer_prototype = buffer_prototype
